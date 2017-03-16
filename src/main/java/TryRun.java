@@ -1,3 +1,6 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * Created by zhiningbo on 2017/3/15.
  */
@@ -13,6 +16,14 @@ public class TryRun {
                                         .setNumber("555-4321")
                                         .setType(AddressBookProtos.Person.PhoneType.HOME))
                         .build();
-        System.out.println(person.toBuilder());
+        System.out.println("toBuilder" + person.toBuilder());
+        System.out.println("toString" + person.toString());
+        System.out.println("toByteString" + person.toByteString());
+        System.out.println("toByteArray" + person.toByteArray());
+        try {
+            person.writeTo(new FileOutputStream("result"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

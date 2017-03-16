@@ -26,3 +26,7 @@
             Protobuf Facet will result in Java source files being generated from the .proto files in the affected modules.
 
             Enjoy!
+
+@1 package top.tutorial;
+@2 option java_package = "tutorial";
+@2 会覆盖 @1
